@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.niu.mapper.InstitutionMapper" >
+    <resultMap id="BaseResultMap" type="com.niu.entity.Institution" >
+        <id column="inst_id" property="instId" jdbcType="BIGINT" />
+        <result column="inst_admin" property="instAdmin" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+        <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <select id="aaa" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select *
+        from institution
+        where inst_id = #{instId,jdbcType=BIGINT}
+    </select>
+</mapper>
